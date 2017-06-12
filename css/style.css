@@ -1,0 +1,74 @@
+:root {
+  /* Colors */
+  --primaryColor: #e9776c;
+  --secondaryColor: #2c3e50;
+  --backgroundColor: #f0f4f8;
+  /* Fonts */
+  --robotoFont: 'Roboto', sans-serif;
+  --ralewayFont: 'Raleway', sans-serif;
+}
+
+
+form{
+	position: relative;
+  margin: 200px auto;
+  width: 700px;
+  padding-right: 32px;
+  font-weight: 300;
+  
+  	
+  	border:solid 1px red;
+}
+label{
+
+	line-height: 44px;
+	list-style: none;
+}
+
+span{
+	word-wrap: break-word;
+	line-height: 1.5; 
+}
+select{
+	width: 226px;
+	margin-left: 50px;
+}
+input{
+	
+	width: 220px;
+		margin-left: 50px;
+}
+
+.left_part_of_lable{
+	display: inline-block;
+  	width: 320px;
+  	border:solid 1px red;
+}
+.right_part_of_lable{
+	display: inline-block;
+	margin-left: 5px;
+  	min-width: 80px;
+  	border:solid 1px red;
+}
+
+.line .left_input {
+		width:120px;
+
+}
+
+.line .right_input{
+	margin-left: 5px;
+	width:50px;
+}
+
+@media screen and (max-width: 700px){
+
+	form{
+	position: relative;
+  	margin: 200px auto;
+  	width: 400px;
+  	padding-right: 32px;
+  	font-weight: 300;
+  }
+
+}
