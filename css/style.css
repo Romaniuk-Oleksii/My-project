@@ -8,58 +8,156 @@
   --ralewayFont: 'Raleway', sans-serif;
 }
 
-
-form{
-	position: relative;
-  margin: 200px auto;
-  width: 700px;
-  padding-right: 32px;
-  font-weight: 300;
-  
-  	
-  	border:solid 1px red;
+body{
+	font-family: Arial;
+	
+	background-image: url('/os/lzh_application/image/bg.jpg');
+	background-size: cover;
+    background-repeat: no-repeat;
+    /*background-position: inherit;*/
+    background-attachment: fixed;
 }
-label{
 
+
+strong{
+	font-weight: bold;
+}
+
+input[type='checkbox']{
+	float: left;
+	}
+.agree{
+	display: flex;	
+}
+.agree>p{
+	margin-left: 15px;
+}
+
+.form{
+	background-color: var(--backgroundColor);
+	 box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	position: relative;
+  	margin: 200px auto;
+  	width: 700px;
+  	padding: 32px;
+  	font-weight: 300;
+ }
+                              /*Submit button*/
+.div_for_submit_button{
+display: box;
+text-align: center;
+box-sizing: border-box;
+}
+
+.submit_button{
+	
+	box-sizing: border-box;
+}
+							/*Submit button*/
+
+
+.input_type_text , select{
+
+	border: none;
+	background-color: var(--backgroundColor); 
+	border-bottom: solid 1px var(--primaryColor);
+}
+
+/*input[type=number] { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}*/
+ 
+
+ a:hover {
+ 	color: red;
+  right: 0;
+  left: auto;
+  width: 100%;
+  background-color: var(--primaryColor);
+  transition: width 0.3s ease;
+}
+  	
+
+label{
+	display: flex;
+	align-items: center;
+	height: 44px;
 	line-height: 44px;
-	list-style: none;
+	list-style: none;	
 }
 
 span{
+
 	word-wrap: break-word;
 	line-height: 1.5; 
 }
-select{
-	width: 226px;
+
+		
+.right_part{
+		
+	box-sizing: border-box;
+	width: 220px;
 	margin-left: 50px;
 }
-input{
-	
-	width: 220px;
-		margin-left: 50px;
-}
+		/*create date by select		 */
 
+.right_part .select_for_day{
+	width:45px;
+	
+	
+}
+.right_part .select_for_month{
+	width: 100px;
+	
+}
+.right_part .select_for_year{
+	width: 65px;
+	
+}
+		/*create date by select		 */
+
+      /*Left and rightt part of form*/
 .left_part_of_lable{
 	display: inline-block;
-  	width: 320px;
-  	border:solid 1px red;
+  	width: 320px;  	
 }
+
 .right_part_of_lable{
 	display: inline-block;
 	margin-left: 5px;
-  	min-width: 80px;
-  	border:solid 1px red;
+  	min-width: 80px;  	
 }
+		/*Left and rightt part of form*/
 
+ 		/*street part html */
 .line .left_input {
-		width:120px;
+		width:130px;
 
 }
-
+.line .left_span{
+	width: 30px;
+}
+.line .right_span{
+	width: 65px;
+	
+}
 .line .right_input{
-	margin-left: 5px;
-	width:50px;
+	margin-left: 1px;
+	width:45px;
 }
+		 /*street part html */
+
+      	/*Hide part*/
+.hide500{
+ 	display: none;
+ }
+     /*Hide part*/
 
 @media screen and (max-width: 700px){
 
