@@ -1,16 +1,17 @@
-var ButId;
-var ButName;
 
 
-function reply_click (clicked_id){
-   	window.ButId=clicked_id.id;
-   	window.ButName=clicked_id.name;
+function reply_click (Button_element){
+	var id = Button_element.id;
+	alert('repit_div' + id)
+	var div_element = document.getElementById('repit_div' + id);
+	div_element.remove();
 }
 
 
 function load(){
 	set_tumorrow_date("select_dd", "select_mm", "select_yyyy");
-	clone_or_remove_div();	
+	clone_div();	
+	remove_div();
 }
 
 function change_name(){
@@ -19,13 +20,13 @@ function change_name(){
 	return count+=1;};
 }
 
-function clone_or_remove_div(){
+function clone_div()
+{
 	var calc = change_name();
 	const btnAd = document.querySelector('#btn');
 	const container = document.querySelector('.container');
 	const block = document.querySelector('.inputs');
 	const blockB = document.querySelector('.inputsBefore');
-	const btnRm = document.querySelector('.btnRm');
 
 	btnAd.addEventListener('click', function(e) {
 		e.preventDefault();
@@ -34,28 +35,27 @@ function clone_or_remove_div(){
 		clone.id = block.id + "_" + pref;
 		container.insertBefore(clone, blockB)
 		clear_div_elements(clone, pref);
+		const btnRm = clone.querySelector('.btnRm');
+		btnRm.addEventListener('click', function(e) {
+			e.preventDefault();
+        	        reply_click(this);
+			return false;
+		});
 	});
-
-	btnRm.addEventListener('click', function(e) {
-		alert(divId);
-		e.preventDefault();
-		alert(divId);
-		let name = document.getElementsByName(divId);
-		let name1 = divId + name[0].id;
-		alert(name1);
-		let select = document.getElementById(name1);
-		alert(select.id);
-		select.remove();	
-
-	});
-
-	// btnRm.addEventListener('click', function(e){
-	// 	e.preventDefault();
-	// 	alert($(this).closest().attr('id'));
-	// 	// var elem = document.querySelector("#one");
-	// 	// elem.remove();
-	// })
 }
+
+function remove_div()
+{
+	const btnRm = document.querySelector('.btnRm');
+	
+	btnRm.addEventListener('click', function(e) {
+		e.preventDefault();
+                reply_click(this);
+		return false;
+	});
+}
+
+
 
 function clear_div_elements(clone, pref){
 	var elements = clone.getElementsByTagName("*");

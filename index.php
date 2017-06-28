@@ -199,7 +199,7 @@
 						</select>
 					</label>
 				
-				<input formnovalidate class="bb btnRm"  id="" name="repit_div" type="image" src="plus.png" onClick="reply_click(this)" >
+				<input formnovalidate class="bb btnRm"  id="" name="repit_div" type="image" src="plus.png" >
 
 					</div>
 					<div class="inputsBefore"></div>
