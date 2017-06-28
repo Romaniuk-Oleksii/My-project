@@ -55,7 +55,10 @@ box-sizing: border-box;
 }
 							/*Submit button*/
 
-
+#btn{
+	position:relative;
+	left: 650px;
+}
 .input_type_text , select{
 
 	border: none;

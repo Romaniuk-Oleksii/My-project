@@ -8,7 +8,10 @@
 		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Roboto" > -->
 		<link rel="stylesheet" href="./css/normalize.css">
 		<link rel="stylesheet" href="./css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="./js/scripts.js"></script>
+	
 	</head>
 
 	<body onload="load()">
@@ -93,17 +96,15 @@
 					<input class="right_part input_type_text" type="text" id="Operator_name">
 				</label>
 				
-				
 			
-  					<button formnovalidate class="btn">add+</button>
 			
 
 				<div class="container">
-				<div class="inputs">
+				<div class="inputs"  id="repit_div">
         <hr>
 					<label  for="region">
 						<span class="left_part_of_lable">Область</span>
-						<select class="right_part" id="region" name="region" >
+						<select class="right_part" id="region" name="name_of_region" >
 							<option disabled selected value hidden> -- select an option -- </option>
 							<option value="Odesa">Одеська</option>
 							<option value="Dnipro">Дніпровська</option>
@@ -135,13 +136,13 @@
 
 					<label class="" for="district">
 						<span class="left_part_of_lable">Район</span>
-						<input class="right_part input_type_text" type="text" id="district">
+						<input class="right_part input_type_text" type="text" name="district" id="district" name="name_of_district">
 					</label>
 						
 
 					<label class="" for="settlement">
 						<span class="left_part_of_lable">Населений пункт</span>
-						<input class="right_part input_type_text" type="text" id="settlement">
+						<input class="right_part input_type_text" type="text" id="settlement" name="name_of_settlement">
 						<span class="right_part_of_lable">м./с.</span>
 					</label>
 						
@@ -149,21 +150,21 @@
 						<label class="" for="street">
 							<span class="left_part_of_lable">Вулиця</span>
 							<span class="right_part left_span">вул.</span>
-							<input class="left_input input_type_text" type="text" id="street">
+							<input class="left_input input_type_text" type="text" id="street" name="name_of_street">
 							<span class="right_span">, буд. №</span>
-							<input class="right_input input_type_text" type="nuber" id="buid_number" >
+							<input class="right_input input_type_text" type="nuber" id="buid_number" name="number_of_build">
 						</label>						
 					</div>
 
 					<label class="" for="storeg_n">
 						<span class="left_part_of_lable">Номер складу</span>
-						<input class="right_part input_type_text" type="number" id="storeg_n">
+						<input class="right_part input_type_text" type="number" id="storeg_n" name="storeg_number" name="number_of_storeg">
 					</label>
 						
 
 					<label class="" for="product_name">
 						<span class="left_part_of_lable">Назва продукції</span>
-						<input class="right_part input_type_text" type="text" id="product_name">
+						<input class="right_part input_type_text" type="text" id="product_name_id" name="name_of_product">
 					</label>
 						
 
@@ -177,13 +178,13 @@
 
 					<label class="" for="lot_name">
 						<span class="left_part_of_lable">Номер партії</span>
-						<input class="right_part input_type_text" type="text" id="lot_name">
+						<input class="right_part input_type_text" type="text" id="lot_id" name="lot_name">
 					</label>
 						
 
 					<label class="" for="harvest_year">
 						<span class="left_part_of_lable">Рік урожаю продукції</span>
-						<input class="right_part input_type_text" type="number" id="harvest_year" min="4" max="4">
+						<input class="right_part input_type_text" type="number" id="harvest_year" min="4" max="4" name="year_of_harvest">
 					</label>
 						
 
@@ -197,11 +198,18 @@
 							<option value="other">інше</option>
 						</select>
 					</label>
-					</div>
-					</div>
+				
+				<input formnovalidate class="bb btnRm"  id="" name="repit_div" type="image" src="plus.png" onClick="reply_click(this)" >
 
-			<!-- <?php //endfor; ?> -->
+					</div>
+					<div class="inputsBefore"></div>
+					
+			</div>
 			<hr>
+
+<input formnovalidate id="btn" name="trololo" type="image" src="plus.png" >
+			
+			
 
 					<label class="" for="equipment">
 						<span class="left_part_of_lable">Чи є в наявності обладнання для відбору</span>
@@ -213,7 +221,6 @@
 						</select>
 					</label>
 				
-
 				<label class="" for="for_who">
 					<span class="left_part_of_lable">Зразки відбираються для здійснення лаболаторних випробувань?</span>
 					<select class="right_part" id="for_who" name="lab_testing">
@@ -223,7 +230,6 @@
 						
 					</select>
 				</label>
-
 				<div class="hide500" id="lot_amount">
 					<p>Будь ласка, замовте до відбору зовнішню сюрвеєрську компанію:</p>
 					<label class="" for="sur_company">
@@ -237,11 +243,9 @@
 							<option value="Inspectorate">Inspectorate</otpion>
 							<option value="Baltic Control">Baltic Control</otpion>
 							<option value="Ecotec Black Sea">Ecotec Black Sea</otpion>
-
 						</select>
 					</label>
 				</div>
-
 				<label class="" for="laboratory_yes_no">
 					<span class="left_part_of_lable">Чи плануєте самостійно надсилати зразок до лаболаторій</span>
 					<select class="right_part" id="laboratory_yes_no" name="labolatory" onchange="check_uncheck('laboratory_yes_no')">
@@ -250,7 +254,6 @@
 						<option value="no">Ні</option>
 					</select>	
 				</label>
-
 				<div id="labolatory">
 					<label class="" for="laboratory">
 						<span class="left_part_of_lable">Вкажіть яку:</span>
@@ -271,12 +274,10 @@
 						</select>
 					</label>	
 				</div>
-
 				<label class="" for="type_of_analise">
 					<span class="left_part_of_lable">Якщо треба проаналізувати зразок на додаткові показники то вкажіть які:</span>
 					<input class="right_part input_type_text" type="text" id="type_of_analise">
 				</label>
-
 				
 				<div>
 					<label class="" for="">
@@ -293,7 +294,6 @@
 							<input class="right_part input_type_text" type="number">
 							<span class="right_part_of_lable">К-ть.</span>
 						</label>
-
 						<label class="" for="">
 							<span class="left_part_of_lable">Склад</span>
 							<input class="right_part input_type_text" type="number">
@@ -310,14 +310,12 @@
 						</select>
 					</label>
 				</div>
-
 				<label class="" for="contact_FIO">
 					<span class="left_part_of_lable">Контактна особа, відповідальна за подання заявки ПІБ</span>
 					<input class="right_part input_type_text" type="text" id="contact_FIO">
 				</label>
 				
 					
-
 				<label class="" for="contact_phone">
 					<span class="left_part_of_lable">Телефон</span>
 					<input class="right_part input_type_text" type="phone" id="contact_phone">
